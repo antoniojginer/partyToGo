@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <figure class="ion-text-center">
+    <img src="assets/icon/favicon.png" alt="" />
+  </figure>
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="loginForm.invalid"type="submit" expand="block" class="ion-padding">Go</ion-button>
+  </form>
+  <ng-container *ngFor="let v1 of validation_messages.email"
+    ><div class="ion-text-center" 
+      *ngIf="loginForm.get('email').hasError(v1.type) && 
+      loginForm.get('email').dirty
+    "
+    >
+      <ion-text color="danger"><p>{{v1.message}}</p></ion-text>
+    </div>
+  </ng-container>
+  <ng-container *ngFor="let v2 of validation_messages.password"
+    ><div class="ion-text-center" 
+      *ngIf="loginForm.get('password').hasError(v2.type) && 
+      loginForm.get('password').dirty
+    "
+    >
+      <ion-text color="danger"><p>{{v2.message}}</p></ion-text>
+    </div>
+  </ng-container>
+</ion-content>
