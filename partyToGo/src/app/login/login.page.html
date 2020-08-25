@@ -17,10 +17,17 @@
       <ion-label>Password</ion-label>
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
-    <ion-button [disabled]="loginForm.invalid"type="submit" expand="block" class="ion-padding">Go</ion-button>
+    <ion-button
+      [disabled]="loginForm.invalid"
+      type="submit"
+      expand="block"
+      class="ion-padding"
+      >Go</ion-button
+    >
   </form>
   <ng-container *ngFor="let v1 of validation_messages.email"
-    ><div class="ion-text-center" 
+    ><div
+      class="ion-text-center"
       *ngIf="loginForm.get('email').hasError(v1.type) && 
       loginForm.get('email').dirty
     "
@@ -29,7 +36,8 @@
     </div>
   </ng-container>
   <ng-container *ngFor="let v2 of validation_messages.password"
-    ><div class="ion-text-center" 
+    ><div
+      class="ion-text-center"
       *ngIf="loginForm.get('password').hasError(v2.type) && 
       loginForm.get('password').dirty
     "
