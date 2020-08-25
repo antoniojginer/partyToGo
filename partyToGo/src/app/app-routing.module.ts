@@ -1,26 +1,30 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { FirstTimeGuard } from "./guards/first-time.guard";
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: "home",
+    loadChildren: () =>
+      import("./home/home.module").then((m) => m.HomePageModule),
+    canActivate: [FirstTimeGuard],
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: "",
+    redirectTo: "home",
+    pathMatch: "full",
   },
   {
-    path: 'slides',
-    loadChildren: () => import('./slides/slides.module').then( m => m.SlidesPageModule)
+    path: "slides",
+    loadChildren: () =>
+      import("./slides/slides.module").then((m) => m.SlidesPageModule),
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

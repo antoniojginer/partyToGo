@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "partyToGo",
+  "appId": "party.to.go.com",
+  "appName": "Party To Go",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
