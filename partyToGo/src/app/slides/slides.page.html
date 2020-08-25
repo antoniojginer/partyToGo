@@ -1,0 +1,13 @@
+<ion-content class="ion-text-center ion-padding">
+  <div class="ion-text-end">
+    <ion-icon id="cerrarSlides" name="close"></ion-icon>
+  </div>
+  <img src="assets/icon/favicon.png" alt="" />
+
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let slide of slides">
+      <h1>{{ slide.titulo }}</h1>
+      <p>{{ slide.texto }}</p>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
