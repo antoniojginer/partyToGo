@@ -1,0 +1,7 @@
+{
+  "name": "partyToGo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
