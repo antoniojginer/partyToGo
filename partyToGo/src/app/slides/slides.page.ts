@@ -31,6 +31,6 @@ export class SlidesPage {
 
   goToLogin() {
     this.storage.set("isSlidesShow", true);
-    this.navController.navigateForward("/home");
+    this.navController.navigateForward("/login");
   }
 }

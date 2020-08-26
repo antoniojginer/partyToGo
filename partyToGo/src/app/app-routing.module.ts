@@ -4,15 +4,15 @@ import { FirstTimeGuard } from "./guards/first-time.guard";
 
 const routes: Routes = [
   {
-    path: "home",
+    path: "tabs",
     loadChildren: () =>
-      import("./home/home.module").then((m) => m.HomePageModule),
+      import("./tabs/tabs.module").then((m) => m.TabsPageModule),
     canActivate: [FirstTimeGuard],
   },
   {
     path: "",
-    redirectTo: "home",
-    pathMatch: "full",
+    redirectTo: "tabs",
+    pathMatch: "full"
   },
   {
     path: "slides",
