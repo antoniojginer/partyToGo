@@ -5,6 +5,7 @@ import {
   FormControl,
   Validators,
 } from "@angular/forms";
+import { NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-login",
@@ -35,7 +36,10 @@ export class LoginPage {
       },
     ],
   };
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private navController: NavController
+  ) {
     this.loginForm = this.formBuilder.group({
       email: new FormControl(
         "",
@@ -53,5 +57,9 @@ export class LoginPage {
 
   loginUser() {
     console.log("submit");
+  }
+
+  goToRegister() {
+    this.navController.navigateForward('/register');
   }
 }

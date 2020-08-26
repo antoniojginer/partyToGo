@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Storage } from "@ionic/storage";
+import {NavController} from "@ionic/angular"
 
 @Component({
   selector: "app-slides",
@@ -8,7 +9,7 @@ import { Storage } from "@ionic/storage";
   styleUrls: ["./slides.page.scss"],
 })
 export class SlidesPage {
-  constructor(private router: Router, private storage: Storage) {}
+  constructor(private navController: NavController, private storage: Storage) {}
 
   slides = [
     {
@@ -30,6 +31,6 @@ export class SlidesPage {
 
   goToLogin() {
     this.storage.set("isSlidesShow", true);
-    this.router.navigateByUrl("/home");
+    this.navController.navigateForward("/home");
   }
 }
