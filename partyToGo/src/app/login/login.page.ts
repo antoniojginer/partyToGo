@@ -56,7 +56,7 @@ export class LoginPage {
   }
 
   loginUser() {
-    console.log("submit");
+    this.navController.navigateForward('/home');
   }
 
   goToRegister() {
